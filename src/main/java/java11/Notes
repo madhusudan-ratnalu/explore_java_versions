@@ -1,0 +1,57 @@
+
+1. New String Methods
+    Java 11 added several new methods to the String class to improve its functionality.
+    isBlank(): Returns true if the string is empty or contains only white space.
+    lines(): Returns a stream of lines extracted from the string, separated by line terminators.
+    strip(), stripLeading(), stripTrailing(): Strips white space from the string, with strip() being Unicode-aware.
+    repeat(int n): Repeats the string n times.
+
+2. Local-Variable Syntax for Lambda Parameters
+    Java 11 allows the use of var in lambda expressions, enabling the use of local
+    variable type inference in lambda parameters
+
+3. Running Java Files with java Command
+You can run a single-file Java source code directly using the java command without needing to compile it first.
+
+Example:
+sh
+Copy code
+$ echo 'public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }' > HelloWorld.java
+$ java HelloWorld.java
+Hello, World!
+
+4. New HttpClient API
+Java 11 includes a new HTTP client in the java.net.http package,
+which supports HTTP/1.1 and HTTP/2, and provides a simpler and more flexible API for sending
+requests and receiving responses.
+
+5. Enhancements in Optional
+Java 11 introduced new methods to the Optional class, improving its usability.
+
+isEmpty(): Returns true if the Optional is empty.
+orElseThrow(): No-argument version of orElseThrow() that throws NoSuchElementException if the Optional is empty.
+
+6. New File Methods
+Java 11 added new methods to the java.nio.file.Files class.
+
+writeString(): Writes a string to a file.
+readString(): Reads the content of a file as a string.
+
+7.7. Epsilon (No-Op) Garbage Collector
+  A new garbage collector called Epsilon GC was introduced in Java 11. It is a no-op garbage collector that handles memory allocation but does not reclaim memory.
+
+  Enabling Epsilon GC:
+  sh
+  Copy code
+  $ java -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -Xmx2g -Xlog:gc DemoApplication
+
+8. Nest-Based Access Control
+Java 11 introduced nest-based access control, which allows classes that are logically grouped together to access each other's private members without using synthetic bridge methods.
+
+9. Flight Recorder
+Java Flight Recorder (JFR) is now included in the JDK. It allows for the recording of profiling data and is useful for monitoring and diagnosing performance issues in production environments.
+
+
+
+
+
